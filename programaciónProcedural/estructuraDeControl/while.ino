@@ -16,4 +16,21 @@
   } while( /* condicion */ );
 
 
-//
+//INTERRUPCION DEL CICLO "MIENTRAS" CON LA INSTRUCCION break
+  int i = 0;
+
+  while( true ){
+    //CODIGO
+    
+    if( i >= 10 ){
+      break;
+    }
+    
+    i++;
+  }
+  //EL CODIGO INTERNO DEL CICLO "MIENTRAS" SE SEGUIRÁ EJECUTANDO CICLICAMENTE HASTA
+  //QUE LA VARIABLE i SEA IGUAL O MAYOR A 10, EN ESE CASO, SE EJECUTARÁ LA INSTRUCCION
+  //break DANDO POR FINALIZADO EL CICLO.
+
+//INTERRUPCION DEL CICLO "MIENTRAS" CON LA INSTRUCCION continue
+  
