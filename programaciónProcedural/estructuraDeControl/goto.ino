@@ -39,6 +39,7 @@
 ///////////////////////////////////
 // EJEMPLO 2 SALTEAR O ADELANTAR //
 ///////////////////////////////////
+//NOTA: ESTE METODO NO ES RECOMENDABLE YA QUE ES LO MISMO QUE HACER USO DE "IF".
   int x = 0;
   Serial.println( "X vale 0" );
 
