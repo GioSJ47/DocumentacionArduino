@@ -1,5 +1,6 @@
 /*
   WHILE: Mientras.
+  DO: Hacer.
 */
 
 //WHILE COMUN
