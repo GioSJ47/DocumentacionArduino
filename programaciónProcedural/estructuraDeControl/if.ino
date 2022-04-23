@@ -1,3 +1,8 @@
+/* 
+  IF: Si lógico.
+  ELSE: Si nó lógico.
+*/
+
 //"SI" LOGICO SIMPLE
   if( /* condicion */ ){
     /* codigo a ejecutar si la condicion es verdadera */
