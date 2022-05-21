@@ -1,0 +1,32 @@
+const byte BTN_N = 3; //CANTIDAD DE BOTONES
+
+byte BTN[BTN_N];
+BTN = { 2 }; //PINES PARA BOTONES
+bool BTN_BOOL[BTN_N];
+unsigned long BTN_T[BTN_N];
+byte BTN_MILLIS = 5;
+
+// AJUSTES
+  
+
+bool botonRead (byte id) {
+  if (BTN_T[id] < millis() && !BTN_BOOL[id] && digitalRead(BTN[id])){
+    BTN_T[id] = millis() + BTN_MILLIS;
+    BTN_BOOL[id] = true;
+  } else if (BTN_T[id] < millis() && BTN_BOOL[id]&& !digitalRead(BTN[id])) {
+    BTN_T[id] = millis() + BTN_MILLIS;
+    BTN_BOOL[id] = false;
+  } else {
+    //CÓDIGO CUANDO SE ESTÁ MANTENIENDO PULSADO
+  }
+}
+
+void setup() {
+  for(byte i = 0; i < BTN_N; i++) {
+    pinMode(BTN[i], INPUT);
+  }
+}
+
+void loop() {
+
+}
