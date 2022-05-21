@@ -10,12 +10,12 @@
 
 /* RECURSO */
   //PINES PARA BOTONES
-    byte BTN[] = { 2, 4, 7 };
+    const byte BTN[] = { 2, 4, 7 };
 
   //NO TOCAR
     bool BTN_BOOL[sizeof(BTN)];
     unsigned long BTN_T[sizeof(BTN)];
-    byte BTN_MILLIS = 5; //ANTI FALSO CONTACTO MECANICO
+    const byte BTN_MILLIS = 5; //ANTI FALSO CONTACTO MECANICO
 
   //FUNCION
     byte buttonRead (byte id = 0) {
