@@ -1,12 +1,16 @@
 /* INFORMACION * /
   DEFINICION:
-    Esta librería no solo es útil para el manejo de botones, es útil para cualquier componente digitál.
+    Esta librería no solo es útil para el manejo de botones, es útil para cualquier entrada digitál.
+    Forma de uso:
+      Especifique los pines de entrada digital en la constante BTN. Donde el primer pin
+      será de ID 0, el segundo pin será ID 1 y así sucesibamente.
+      La función buttonRead
   
   FUNCIONES:
     buttonRead(BotonID):
       La función devuelve 0 si el botón no está siendo precionado.
-      La función devuelve 1 si el botón está siendo precionado.
-      La función devuelve 2 si el botón ya lleva rato siendo precionado.
+      La función devuelve 1 si el botón fué precionado.
+      La función devuelve 2 mientras el botón siga precionado.
 
 /* RECURSO */
   //PINES PARA BOTONES
