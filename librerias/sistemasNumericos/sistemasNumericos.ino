@@ -12,6 +12,14 @@
           fDigitos(0xA13, 16); //return: 3
         EJ 3: Contar digitos del número 71503 en el sistema octál (coloca 0 al inicio del número).
           fDigitos(071503, 8); //return: 5
+	  
+      sistemaNumerico(num, baseA, baseB = 10, _permitidos, permitidos[]):
+	num: ingresa el número a ser convertido (solo admite numeros decimales, por ejemplo para
+	  un numero octal no debe debe ingrsar 0765, en lugar de eso debe ingresar solo 765 ya que
+	  al colocar cero delantes realmente convierte el número en decimal. Si ingresa 0765 debe
+	  colocar 10 en baseA).
+	baseA: especifica a que sistema numerico pertenece num.
+	baseB: especifica a que base lo quieres pasar.
 
 */
 
@@ -26,7 +34,7 @@ byte fDigitos(unsigned long num, byte sistemaNumerico = 10) {
   return (cont) ? cont : 1;
 }
 
-unsigned long sistemaNumerico(unsigned long num, uint8_t baseA, uint8_t baseB = 10, bool _permitidos = false, uint8_t permitidos[] = { }, bool test = false) {
+unsigned long sistemaNumerico(unsigned long num, uint8_t baseA, uint8_t baseB = 10, bool _permitidos = false, uint8_t permitidos[] = { }) {
   unsigned long ram = num;
   
   //DIGITOS
