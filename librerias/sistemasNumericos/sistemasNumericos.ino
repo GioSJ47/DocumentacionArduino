@@ -20,6 +20,8 @@
 	  colocar 10 en baseA).
 	baseA: especifica a que sistema numerico pertenece num.
 	baseB: especifica a que base lo quieres pasar.
+	_permitidos: habilita para inponer los números permitidos a continuación.
+	permitidos: ingresa un array con los dígitos a ser usados en el nuevo sistema numérico.
 
 */
 
