@@ -1,6 +1,6 @@
-/* KY-040 */
-  //PINES PARA ENCODER ROTATORIO (DT, CLK)
-    byte KY[] = { 4, 2 };
+/* KY-040 - ENCODER ROTATORIO */
+  //PINES (DT, CLK)
+    const byte KY[] = { 4, 2 };
 
   //NO TOCAR
     byte KY_EST[sizeof(KY)/2];  //ESTADO
@@ -57,13 +57,14 @@
       
       return res;
     }
-    /**/
+
+
 
 void setup() {
   /* KY-040 AJUSTE */
-  for (byte i = 0; i < sizeof(KY); i++) {
-    pinMode(KY[i], INPUT);
-  }
+    for (byte i = 0; i < sizeof(KY); i++) {
+      pinMode(KY[i], INPUT);
+    }
   
   Serial.begin(9600);
 }
@@ -72,6 +73,7 @@ void setup() {
 
 byte num = 0, anterior = 0;
 void loop() {
+  //EJ:
   num += kyRead(0);
   
   if ( num != anterior ) {
