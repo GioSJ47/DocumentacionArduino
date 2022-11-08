@@ -1,5 +1,5 @@
 /* BOTONES */
-  //PINES PARA BOTONES
+  //PINES
     const byte BTN[] = { 2, 4, 7 };
 
   //NO TOCAR
@@ -8,7 +8,7 @@
     const byte BTN_MILLIS = 5;
 
   //FUNCION
-    byte buttonRead (byte id = 0) {
+    byte fBTN (byte id = 0) {
       if (BTN_T[id] < millis() && !BTN_BOOL[id] && digitalRead(BTN[id])){
         BTN_T[id] = millis() + BTN_MILLIS;
         BTN_BOOL[id] = true;
@@ -22,23 +22,29 @@
       }
     }
 
+
+
 void setup() {
-  for(byte i = 0; i < sizeof(BTN); i++) {
-    pinMode(BTN[i], INPUT);
-  }
+  /* BOTONES */
+    for(byte i = 0; i < sizeof(BTN); i++) {
+      pinMode(BTN[i], INPUT);
+    }
   
   Serial.begin(9600);
 }
 
+
+
 void loop() {
+  //EJ:
   Serial.print("A: ");
-  Serial.println((int)buttonRead(0));
+  Serial.println((int)fBTN(0));
   
   Serial.print("B: ");
-  Serial.println((int)buttonRead(1));
+  Serial.println((int)fBTN(1));
   
   Serial.print("C: ");
-  Serial.println((int)buttonRead(2));
+  Serial.println((int)fBTN(2));
   
   Serial.println("");
   delay(1000);
