@@ -1,4 +1,4 @@
-/* LM35 */
+/* LM35 - TERMOMETRO */
   //PINES
     const byte LM35[] = { A0 };
 
