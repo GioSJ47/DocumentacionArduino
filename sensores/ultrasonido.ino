@@ -1,30 +1,43 @@
-/* INFO:
-   Rango: 2cm a 400cm
-   Angulo: 30 grados
-   Uso: la funcion ultraSonido() devuelve el
-        valor en centimetros.
+/* ULTRASONIDO:
+     Rango: 2cm a 400cm
+     Angulo: 30°
+     Uso: la funcion fUS() devuelve el
+          valor en centimetros.
 */
 
-const int pinTrig = 3; //PIN EMISOR
-const int pinEcho = 2; //PIN RESEPTOR
+  //PINES (TRIG, ECHO)
+    const byte US[] = { 2, 4 };
 
-float ultrasonido(byte trig, byte echo){
-  long tiempo;
-  digitalWrite(trig, HIGH);
-  delay(10);
-  digitalWrite(trig, LOW);
+  //FUNCION
+    float fUS(byte id = 0){
+      long tiempo;
+      digitalWrite(US[id * 2], HIGH);
+      delay(10);
+      digitalWrite(US[id * 2], LOW);
+    
+      tiempo = (pulseIn(US[id * 2 + 1], HIGH)/2);
+    
+      return tiempo * 0.0343;
+    }
 
-  tiempo = (pulseIn(echo, HIGH)/2);
 
-  return tiempo * 0.0343;
-}
 
 void setup(){
-  pinMode(pinTrig, OUTPUT);
-  pinMode(pinEcho, INPUT);
+  /* ULTRASONIDO */
+    for (byte i = 0; i < sizeof(US) / 2; i++) {
+      pinMode(US[i * 2    ], OUTPUT);
+      pinMode(US[i * 2 + 1], INPUT );
+    }
+
+  Serial.begin(9600);
 }
 
+
+
 void loop(){
-  //Ejemplo:
-  float var = ultrasonido(pinTrig, pinEcho);
+  //EJ:
+  Serial.print("Distancia: ");
+  Serial.println(fUS(0));
+
+  delay(500);
 }
