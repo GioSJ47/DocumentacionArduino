@@ -1,4 +1,4 @@
-/* ULTRASONIDO:
+/* HC-SR04 - ULTRASONIDO:
      Rango: 2cm a 400cm
      Angulo: 30°
      Uso: la funcion fUS() devuelve el
